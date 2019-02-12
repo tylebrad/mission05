@@ -1,6 +1,6 @@
-# CS 3308 Mission 04 -- Algorithm Analysis and Binary Search
+# CS 3308 Mission 05 -- Algorithm Analysis and Binary Search
 
-## Due: Sunday February 10, 2019 @ 2300
+## Due: Sunday February 17, 2019 @ 2300
 
 ## Purpose
 * Gain experience implementing algorithms
