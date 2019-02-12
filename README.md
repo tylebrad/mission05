@@ -160,6 +160,7 @@ end function
 
 ### Implementations of Algorithms in Part 1
 When you have completed the assignment (all tests pass) or it is reaching midnight of the due date, make sure you have completed the following:
+
 0. Your code compiles with no compilation errors
 1. Committed all changes to your repo
 2. Pushed your changes to GitHub
