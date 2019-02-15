@@ -10,6 +10,8 @@ import edu.isu.cs.cs3308.algorithms.ArraySearch;
 public class LinearSearch implements ArraySearch {
     @Override
     public <E extends Comparable> int search(E[] array, E item) {
+        if(array == null || item == null)
+            return -1;
         int n = array.length;
         for(int i = 0; i < n; i++){
             if(array[i] == item){
