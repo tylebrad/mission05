@@ -16,10 +16,17 @@ public class BinarySearch implements ArraySearch {
         int low = 0;
         int high = array.length - 1;
 
-        while(low >= high)
+        while(low <= high) {
             index = (low + high) / 2;
-            if(item == array[index])
+            if (item == array[index])
                 return index;
+            else if(item < array[index])
+                    high = index - 1;
 
+            else
+                low = index + 1;
+
+        }
+        return -1;
     }
 }
