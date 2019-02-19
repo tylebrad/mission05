@@ -2,7 +2,7 @@
 // CS 3308
 // 2/13/2019
 // Isaac Griffith
-// Class Description - Uses recursion to search an array linearly
+// Class Description - Using recursion to search an array linearly
 package edu.isu.cs.cs3308.algorithms.impl;
 
 import edu.isu.cs.cs3308.algorithms.ArraySearch;
