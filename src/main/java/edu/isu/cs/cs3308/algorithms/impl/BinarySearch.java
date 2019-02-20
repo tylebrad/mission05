@@ -20,9 +20,8 @@ public class BinarySearch implements ArraySearch {
             index = (low + high) / 2;
             if (item == array[index])
                 return index;
-            else if(item < array[index])
+            else if(item.compareTo(array[index]) < 0)
                     high = index - 1;
-
             else
                 low = index + 1;
 
