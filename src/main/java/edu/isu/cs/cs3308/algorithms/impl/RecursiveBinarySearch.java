@@ -2,7 +2,6 @@
 // CS 3308
 // 2/13/2019
 // Isaac Griffith
-// Class Description -
 package edu.isu.cs.cs3308.algorithms.impl;
 
 import edu.isu.cs.cs3308.algorithms.ArraySearch;

@@ -13,6 +13,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Driver class for the experimental simulator.
@@ -21,8 +22,33 @@ import java.util.Random;
 public class Driver {
 
     public static void main(String args[]) {
-        // do the simulation using generateRandomArray()
+        Integer[] bigArray = generateRandomArray(5000);
 
+        ArraySearch linear = new LinearSearch();
+        ArraySearch binary = new BinarySearch();
+        ArraySearch binaryRec = new RecursiveBinarySearch();
+        ArraySearch linearRec = new RecursiveLinearSearch();
+        long[] linearTimes = {2};
+        long[] binaryTimes = {2};
+        long[] recLinearTimes = {2};
+        long[] recBinaryTimes = {2};
+
+        long binaryStart = System.nanoTime();
+        binary.search(bigArray, 2526);
+        long binaryEnd = System.nanoTime();
+        long binaryTime = binaryEnd - binaryStart;
+
+        long recLinearStart = System.nanoTime();
+        linearRec.search(bigArray, 4932);
+        long recLinearEnd = System.nanoTime();
+        long recLinear = recLinearEnd - recLinearStart;
+
+        long recBinaryStart = System.nanoTime();
+        binaryRec.search(bigArray, 1432);
+        long recBinaryEnd = System.nanoTime();
+        long recBinary = recBinaryEnd - recBinaryStart;
+        System.out.println(recLinear);
+        //report(linearTimes, binaryTimes, recLinearTimes, recBinaryTimes, 0, 50);
         // report the results using report;
     }
 
