@@ -22,34 +22,48 @@ import java.util.concurrent.TimeUnit;
 public class Driver {
 
     public static void main(String args[]) {
-        Integer[] bigArray = generateRandomArray(5000);
-
+        // Creation of array and Declaration of search and time variables
+        Integer[] arr1 = generateRandomArray(9500);
         ArraySearch linear = new LinearSearch();
         ArraySearch binary = new BinarySearch();
         ArraySearch binaryRec = new RecursiveBinarySearch();
         ArraySearch linearRec = new RecursiveLinearSearch();
-        long[] linearTimes = {2};
-        long[] binaryTimes = {2};
-        long[] recLinearTimes = {2};
-        long[] recBinaryTimes = {2};
+        long[] linearTimes = new long[10];
+        long[] binaryTimes = new long[10];
+        long[] recLinearTimes = new long[10];
+        long[] recBinaryTimes = new long[10];
+        long holdStart;
+        long holdEnd;
+        // Storing iterative linear search times in linearTimes[]
+        for (int i = 0; i < linearTimes.length; i++){
+            holdStart = System.nanoTime();
+            linear.search(arr1, 2500);
+            holdEnd = System.nanoTime();
+            linearTimes[i] += holdEnd - holdStart;
+        }
+        // Storing recursive linear search times in recLinearTimes[]
+        for (int i = 0; i < recLinearTimes.length; i++){
+            holdStart = System.nanoTime();
+            linearRec.search(arr1, 2500);
+            holdEnd = System.nanoTime();
+            recLinearTimes[i] += holdEnd - holdStart;
+        }
+        // Storing iterative binary search times in binaryTimes[]
+        for (int i = 0; i < binaryTimes.length; i++){
+            holdStart = System.nanoTime();
+            binary.search(arr1, 2500);
+            holdEnd = System.nanoTime();
+            binaryTimes[i] += holdEnd - holdStart;
+        }
+        // Storing recursive Binary search times in binaryTimes[]
+        for (int i = 0; i < recBinaryTimes.length; i++){
+            holdStart = System.nanoTime();
+            binaryRec.search(arr1, 2500);
+            holdEnd = System.nanoTime();
+            recBinaryTimes[i] += holdEnd - holdStart;
+        }
+        report(linearTimes, recLinearTimes, binaryTimes, recBinaryTimes, 3000, 500);
 
-        long binaryStart = System.nanoTime();
-        binary.search(bigArray, 2526);
-        long binaryEnd = System.nanoTime();
-        long binaryTime = binaryEnd - binaryStart;
-
-        long recLinearStart = System.nanoTime();
-        linearRec.search(bigArray, 4932);
-        long recLinearEnd = System.nanoTime();
-        long recLinear = recLinearEnd - recLinearStart;
-
-        long recBinaryStart = System.nanoTime();
-        binaryRec.search(bigArray, 1432);
-        long recBinaryEnd = System.nanoTime();
-        long recBinary = recBinaryEnd - recBinaryStart;
-        System.out.println(recLinear);
-        //report(linearTimes, binaryTimes, recLinearTimes, recBinaryTimes, 0, 50);
-        // report the results using report;
     }
 
     /**
